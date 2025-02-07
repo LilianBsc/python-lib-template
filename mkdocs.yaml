@@ -1,0 +1,4 @@
+site_name: MyLib
+nav:
+  - Home: index.md
+  - MyClass: my-class.md
