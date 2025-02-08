@@ -12,10 +12,15 @@ class MyClass:
         """
         self.attr1 = attr1
 
-    def method1(self, message: str):
+    def method1(self, message: str) -> str:
         """print 'message attr1'
 
         Args:
             message (str): _description_
+        
+        Outputs:
+            message (str): _description_
         """
-        print(f"{message} {self.attr1}")
+        message = f"{message} {self.attr1}"
+        print(message)
+        return message
