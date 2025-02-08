@@ -21,5 +21,4 @@ class MyClass:
         Outputs:
             message (str): _description_
         """
-        message = f"{message} {self.attr1}"
-        return message
+        return f"{message} {self.attr1}"
