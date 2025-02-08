@@ -11,7 +11,7 @@ class MyClass:
             attr1 (int): _description_
         """
         self.attr1 = attr1
-    
+
     def method1(self, message: str):
         """print 'message attr1'
 
