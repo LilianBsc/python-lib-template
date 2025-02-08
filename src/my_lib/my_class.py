@@ -17,10 +17,9 @@ class MyClass:
 
         Args:
             message (str): _description_
-        
+
         Outputs:
             message (str): _description_
         """
         message = f"{message} {self.attr1}"
-        print(message)
         return message
