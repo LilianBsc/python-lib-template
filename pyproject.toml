@@ -4,49 +4,50 @@ build-backend = "hatchling.build"
 
 [project]
 name = "my_lib"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Une brève description de votre projet"
 authors = [
     { name="Votre Nom", email="votre.email@example.com" }
 ]
 readme = "README.md"
 license = { file="LICENSE" }
+requires-python = ">=3.8"
 dependencies = [
-    "mkdocs",
-    "ruff",
-    "pytest"
+    "numpy"
 ]
-
-[tool.hatch]
-version = "0.1.0"
-scripts = [
-    # Ajouter vos scripts ici
-]
-
-[tool.ruff]
-# Configurations pour Ruff
-line-length = 88
-select = ["E", "F", "W"]
-ignore = ["E203", "E266", "E501", "W503"]
-
-[tool.pytest.ini_options]
-# Configurations pour Pytest
-addopts = "-ra -q"
-
-[tool.mkdocs]
-# Configurations pour MkDocs
-site_name = "My lib doc"
-
 
 [tool.hatch.envs.default]
-# Dépendances supplémentaires pour l'environnement
 dependencies = [
     "mkdocs",
     "ruff",
     "pytest",
 ]
 
+[tool.hatch.version]
+path = "src/my_lib/__about__.py"
+
+# Linting
+[tool.hatch.envs.lint]
+skip-install = true
+dependencies = [
+    "ruff"
+]
+
+[tool.hatch.lint]
+line-length = 88
+select = ["E", "F", "W"]
+ignore = ["E203", "E266", "E501", "W503"]
+
+# Tests
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+
+# Doc
+[tool.mkdocs]
+site_name = "My lib doc"
+
 [tool.hatch.envs.default.scripts]
 lint = "ruff ."
 test = "pytest"
+doc = "mkdocs serve"
 
