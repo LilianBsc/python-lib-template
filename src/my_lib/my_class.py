@@ -17,7 +17,7 @@ class MyClass:
 
         Args:
             message (str): _description_
-        
+
         Outputs:
             message (str): _description_
         """

@@ -1,4 +1,26 @@
 site_name: MyLib
+theme:
+  name: readthedocs
+  highlightjs: true
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          load_external_modules: true
+          options:
+            docstring_style: google
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.superfences
+
 nav:
   - Home: index.md
-  - MyClass: my-class.md
+  - Description:
+    - description/about.md
+  - Getting Started:
+    - getting_started/installation.md
+  - Objects:
+    - objects/my_class.md
